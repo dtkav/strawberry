@@ -106,6 +106,9 @@ class StrawberryContainer(StrawberryType):
 
         return False
 
+    def __hash__(self) -> int:
+        return hash(self.of_type)
+
 
 class StrawberryList(StrawberryContainer):
     ...
@@ -139,3 +142,8 @@ class StrawberryTypeVar(StrawberryType):
             return self.type_var == other
 
         return super().__eq__(other)
+
+    def __hash__(self) -> int:
+        return hash(self.type_var)
+
+

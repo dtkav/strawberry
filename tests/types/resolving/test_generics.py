@@ -66,7 +66,7 @@ def test_generic_optionals():
     assert isinstance(resolved, StrawberryOptional)
     assert isinstance(resolved.of_type, StrawberryTypeVar)
     assert resolved.is_generic
-
+    assert hash(resolved)
     assert resolved == Optional[T]
 
 
